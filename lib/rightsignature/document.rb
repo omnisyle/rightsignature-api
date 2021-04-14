@@ -42,6 +42,16 @@ module RightSignature
       get "/documents/#{guid}"
     end
 
+    # Gets details for an archived document
+    # * <b>guid</b>: legacy document guid
+    #
+    # Ex. Get details for document GUID123
+    #   @rs_connection.archived_document_details("GUID123")
+    #
+    def archived_document_details(guid)
+      get "/archived_documents_by_original_guid/#{guid}"
+    end
+
     # Gets details for multiple documents.
     # * <b>guids</b>: Array of document GUIDs
     #
