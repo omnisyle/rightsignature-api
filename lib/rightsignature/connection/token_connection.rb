@@ -28,6 +28,7 @@ module RightSignature
       options[:headers]["Accept"] ||= "*/*"
       options[:headers]["Content-Type"] ||= "application/json"
       options[:headers]["Authorization"] = "Basic #{Base64.strict_encode64(@api_token)}"
+      options[:headers]["User-Agent"] = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36"
       self.class.__send__(method, url, options)
     end
 
